@@ -38,7 +38,6 @@ for (path1, path2) in zip(sinsy_files, mono_label_files):
         lab_sinsy.start_times[x] = lab_mono_label.start_times[y]
         lab_sinsy.end_times[x] = lab_mono_label.end_times[y]
 
-    print(path2)
     lab_sinsy = fix_mono_lab_after_align(lab_sinsy)
     with open(join(dst_dir, name), "w") as of:
         of.write(str(lab_sinsy))
