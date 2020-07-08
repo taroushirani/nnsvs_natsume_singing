@@ -21,6 +21,10 @@ Due to the licensing issue, this recipe does not include data nor helper scripts
 
 The directory structure made by this recipe is the same as kiritan_singing does.
 
+## Sample code
+- [Jupyter Notebook](https://gist.github.com/taroushirani/d1c9a99f2c17026d116c976fa2270368) (Google Colaboratory, comments are written in Japanese)
+
+
 ## Known issues
 There are mismatches between muxicxml files and HTS mono-phone labels in songs 2, 3, 13, 27, 43. Currently these songs are excluded from training in this recipe.
 
