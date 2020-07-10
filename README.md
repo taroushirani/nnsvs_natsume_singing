@@ -1,6 +1,6 @@
 # nnsvs_natsume_singing
 
-[NN-SVS](https://github.com/r9y9/nnsvs) recipe of Yuuri Natsume's singing voice database (51 songs).
+[NNSVS](https://github.com/r9y9/nnsvs) recipe of Yuuri Natsume's singing voice database (51 songs).
 Almost all codes are derived from [kiritan_singing](https://github.com/r9y9/kiritan_singing).
 
 ## Requirements
@@ -26,7 +26,7 @@ The directory structure made by this recipe is the same as kiritan_singing does.
 
 
 ## Known issues
-There are mismatches between muxicxml files and HTS mono-phone labels in songs 2, 3, 13, 27, 43. Currently these songs are excluded from training in this recipe.
+Currently there are some wrong labels in Yuuri Natsume's singing voice database and you need [the patch](https://gist.githubusercontent.com/taroushirani/813380016fa27e7bb42408d246dad7e7/raw/cdfe5cbf6ed905fc2ad115f45689daedd044b02e/natsume_singing_fix.patch) to fix this. And there are mismatches between muxicxml files and HTS mono-phone labels in songs 2, 3, 13, 27, 43. Currently these songs are excluded from training in this recipe.
 
 ## Resources
 - 夏目悠李/男声歌声データベース配布、始めました！【2020/7/5 23:53更新】: https://amanokei.hatenablog.com/entry/2020/04/30/230003
