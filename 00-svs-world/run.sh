@@ -168,7 +168,7 @@ if [ ${stage} -le 4 ] && [ ${stop_stage} -ge 4 ]; then
         model=acoustic train.out_dir=$expdir/acoustic \
         data.batch_size=$batch_size \
         resume.checkpoint=$resume_checkpoint \
-	model.netG.params.num_layers = 18
+	model.netG.params.num_layers=18
 fi
 
 
