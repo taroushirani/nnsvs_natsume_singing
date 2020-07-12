@@ -167,7 +167,8 @@ if [ ${stage} -le 4 ] && [ ${stop_stage} -ge 4 ]; then
         data.dev.out_dir=$dump_norm_dir/$dev_set/out_acoustic/ \
         model=acoustic train.out_dir=$expdir/acoustic \
         data.batch_size=$batch_size \
-        resume.checkpoint=$resume_checkpoint
+        resume.checkpoint=$resume_checkpoint \
+	model.netG.params.num_layers = 18
 fi
 
 
