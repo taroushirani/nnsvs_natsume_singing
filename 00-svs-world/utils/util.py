@@ -1,6 +1,5 @@
 # coding: utf-8
 from os.path import join
-import re
 import jaconv
 import numpy as np
 from nnmnkwii.io import hts

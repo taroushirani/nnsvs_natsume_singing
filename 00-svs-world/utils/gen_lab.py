@@ -1,6 +1,5 @@
 import pysinsy
 import os
-
 from glob import glob
 from os.path import join, basename, expanduser, splitext
 from nnmnkwii.io import hts
@@ -42,13 +41,16 @@ dst_dir = join(config["out_dir"], "mono_label")
 os.makedirs(dst_dir, exist_ok=True)
 for m in tqdm(files):
     name = splitext(basename(m))[0]
+    print(name)
     if name in config["exclude_songs"]:
         continue
     h = hts.HTSLabelFile()
     with open(m) as f:
         for l in f:
+            print(l)
             s,e,l = l.strip().split()
-            s,e = int(float(s) * 1e7), int(float(e) * 1e7)
+            if config["label_time_unit"] == "sec":
+                s,e = int(float(s) * 1e7), int(float(e) * 1e7)
             h.append((s,e,l))
         with open(join(dst_dir, basename(m)), "w") as of:
             of.write(str(fix_mono_lab_before_align(h)))
@@ -79,3 +81,4 @@ for name in ["sinsy_mono", "sinsy_full", "mono_label"]:
 
         with open(join(dst_dir, name), "w") as of:
             of.write(str(lab))
+import re

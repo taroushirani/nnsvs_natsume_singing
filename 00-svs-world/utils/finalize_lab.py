@@ -192,10 +192,8 @@ print("Prepare data for acoustic models")
 for base in tqdm(base_files):
     utt_id = splitext(basename(base))[0]
     wav_path = join(expanduser(config["db_root"]), f"wav/{utt_id}.wav")
-    print(wav_path)
-
-    print(wav_path)   
     assert exists(wav_path)
+    
     # sr, wave = wavfile.read(wav_path)
     wav, sr = librosa.load(wav_path, sr=48000)
 
