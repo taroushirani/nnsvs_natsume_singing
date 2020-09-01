@@ -20,7 +20,7 @@ label_time_unit: "sec"
 out_dir: "./data"
 
 ## Songs to be excluded from trainig.
-exclude_songs: ["9"]
+exclude_songs: []
 
 ### Pyinsy related settings.
 ## Sinsy dictionary directory

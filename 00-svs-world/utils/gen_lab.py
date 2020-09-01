@@ -41,13 +41,11 @@ dst_dir = join(config["out_dir"], "mono_label")
 os.makedirs(dst_dir, exist_ok=True)
 for m in tqdm(files):
     name = splitext(basename(m))[0]
-    print(name)
     if name in config["exclude_songs"]:
         continue
     h = hts.HTSLabelFile()
     with open(m) as f:
         for l in f:
-            print(l)
             s,e,l = l.strip().split()
             if config["label_time_unit"] == "sec":
                 s,e = int(float(s) * 1e7), int(float(e) * 1e7)
