@@ -117,7 +117,7 @@ fi
 
 if [ ${stage} -le 2 ] && [ ${stop_stage} -ge 2 ]; then
     echo "stage 2: Training time-lag model"
-    if [ ! -z "${config_pretrained_expdir}" ]; then
+    if [ ! -z "${config_pretrained_expdir:=}" ]; then
         resume_checkpoint=$config_pretrained_expdir/timelag/latest.pth
     else
         resume_checkpoint=
@@ -133,7 +133,7 @@ fi
 
 if [ ${stage} -le 3 ] && [ ${stop_stage} -ge 3 ]; then
     echo "stage 3: Training phoneme duration model"
-    if [ ! -z "${config_pretrained_expdir}" ]; then
+    if [ ! -z "${config_pretrained_expdir:=}" ]; then
         resume_checkpoint=$config_pretrained_expdir/duration/latest.pth
     else
         resume_checkpoint=
@@ -150,7 +150,7 @@ fi
 
 if [ ${stage} -le 4 ] && [ ${stop_stage} -ge 4 ]; then
     echo "stage 4: Training acoustic model"
-    if [ ! -z "${config_pretrained_expdir}" ]; then
+    if [ ! -z "${config_pretrained_expdir:=}" ]; then
         resume_checkpoint=$config_pretrained_expdir/acoustic/latest.pth
     else
         resume_checkpoint=
