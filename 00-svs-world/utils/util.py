@@ -4,7 +4,11 @@ import re
 import jaconv
 import numpy as np
 from nnmnkwii.io import hts
-import config
+from tqdm import tqdm
+
+import yaml
+with open('config.yaml', 'r') as yml:
+    config = yaml.load(yml, Loader=yaml.FullLoader)
 
 def merge_sil(lab):
     N = len(lab)
@@ -147,13 +151,13 @@ def segment_labels(lab, strict=True, threshold=1.0, min_duration=5.0,
 
 def prep_ph2num():
     kiritan_phone_mapping = {}
-    with open(join(config.sinsy_dic, "japanese.table")) as f:
+    with open(join(config["sinsy_dic"], "japanese.table")) as f:
         for l in f:
             s = l.strip().split()
             key = jaconv.hira2kata(s[0])
             kiritan_phone_mapping[key] = s[1:]
     sinsy_phone_mapping = {}
-    with open(join(config.sinsy_dic, "japanese.utf_8.table")) as f:
+    with open(join(config["sinsy_dic"], "japanese.utf_8.table")) as f:
         for l in f:
             s = l.strip().split()
             key = jaconv.hira2kata(s[0])
@@ -220,13 +224,8 @@ def fix_mono_lab_before_align(lab):
     f = hts.HTSLabelFile()
     f.append(lab[0])
     for i in range(1, len(lab)):
-        if(re.match(r"[AIUEO]", lab.contexts[i])):
-            print("Unvoiced vowel {} is converted to voiced one. To use unvoiced vowels, the rylics \"{} {}\" in musicxml should be written in Katakana.".format(lab.contexts[i], f.contexts[-1], lab.contexts[i]))
-            # Currently there is no easy way to distinguish unvoiced vowels from voicing ones unless hints are provided by scores.
-            # For simplicity, convert phonemes of unvoiced vowels to those of voiced ones.
-            f.append((lab.start_times[i], lab.end_times[i], lab.contexts[i].lower()))
-        else:
-            f.append(lab[i], strict=False)
+        # nothing to do 
+        f.append(lab[i], strict=False)
     return(f)
 
 def fix_mono_lab_after_align(lab):
