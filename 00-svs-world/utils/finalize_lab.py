@@ -191,7 +191,8 @@ for d in [wav_dst_dir, lab_align_dst_dir, lab_score_dst_dir]:
 print("Prepare data for acoustic models")
 for base in tqdm(base_files):
     utt_id = splitext(basename(base))[0]
-    wav_path = join(expanduser(config["db_root"]), f"wav/{utt_id}.wav")
+    #wav_path = join(expanduser(config["db_root"]), f"wav/{utt_id}.wav")
+    wav_path = join(expanduser(config["out_dir"]), f"augmented_wav/{utt_id}.wav")
     assert exists(wav_path)
     
     # sr, wave = wavfile.read(wav_path)

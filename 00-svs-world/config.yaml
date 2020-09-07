@@ -20,7 +20,15 @@ label_time_unit: "sec"
 out_dir: "./data"
 
 ## Songs to be excluded from trainig.
-exclude_songs: []
+exclude_songs: ["32", "33", "34", "35", "43", "44"]
+
+## Transpose settings
+sample_rate: 48000
+frame_period: 5
+f0_floor: 50
+f0_ceil: 700
+transpose_floor: -12
+transpose_ceil: 12
 
 ### Pyinsy related settings.
 ## Sinsy dictionary directory

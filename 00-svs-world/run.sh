@@ -75,7 +75,8 @@ fi
 if [ ${stage} -le 1 ] && [ ${stop_stage} -ge 1 ]; then
     echo "stage 1: Feature generation"
 
-    for s in ${datasets[@]};
+#    for s in ${datasets[@]};
+    for s in ${testsets[@]};
     do
 	# Natsume_Singing_DB
 	# Max frequency: 587.3295358348153, Min frequency: 109.99999999999989

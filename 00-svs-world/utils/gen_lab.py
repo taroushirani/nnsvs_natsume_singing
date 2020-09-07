@@ -1,5 +1,6 @@
 import pysinsy
 import os
+import re
 from glob import glob
 from os.path import join, basename, expanduser, splitext
 from nnmnkwii.io import hts
@@ -16,10 +17,14 @@ assert sinsy.setLanguages("j", config["sinsy_dic"])
 
 # generate full/mono labels by sinsy
 print("Convert musicxml to label files.")
-files = sorted(glob(join(expanduser(config["db_root"]), "**/*.*xml"), recursive=True))
+#files = sorted(glob(join(expanduser(config["db_root"]), "**/*.*xml"), recursive=True))
+files = sorted(glob(join(expanduser(config["out_dir"]), "augmented_xml/*.xml"), recursive=True))
 for path in tqdm(files):
     name = splitext(basename(path))[0]
-    if name in config["exclude_songs"]:
+    print(name)
+    exclude_songs_re = re.compile("(" + "|".join([song + "_.*" for song in config["exclude_songs"]]) + ")")
+    
+    if re.match(exclude_songs_re, name):
         continue
     assert sinsy.loadScoreFromMusicXML(path)
     for is_mono in [True, False]:
@@ -36,12 +41,15 @@ for path in tqdm(files):
     sinsy.clearScore()
 
 print("Copy original label files.")
-files = sorted(glob(join(expanduser(config["db_root"]), "**/*.lab"), recursive=True))
+#files = sorted(glob(join(expanduser(config["db_root"]), "**/*.lab"), recursive=True))
+files = sorted(glob(join(expanduser(config["out_dir"]), "augmented_lab/*.lab"), recursive=True))
 dst_dir = join(config["out_dir"], "mono_label")
 os.makedirs(dst_dir, exist_ok=True)
 for m in tqdm(files):
     name = splitext(basename(m))[0]
-    if name in config["exclude_songs"]:
+    exclude_songs_re = re.compile("(" + "|".join([song + "_.*" for song in config["exclude_songs"]]) + ")")
+
+    if re.match(exclude_songs_re, name):
         continue
     h = hts.HTSLabelFile()
     with open(m) as f:
