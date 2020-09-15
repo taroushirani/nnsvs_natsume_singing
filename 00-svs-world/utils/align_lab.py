@@ -13,7 +13,7 @@ with open('config.yaml', 'r') as yml:
     config = yaml.load(yml, Loader=yaml.FullLoader)
 
 # Get rough alignment between
-# 1) singing voice db's mono-phone labels and
+# 1) mono-phone labels of singing voice database and
 # 2) generated labels by sinsy
 
 ph2num = prep_ph2num()
@@ -29,7 +29,6 @@ for (path1, path2) in tqdm(zip(sinsy_files, mono_label_files)):
     lab_sinsy = hts.load(path1)
     lab_mono_label = hts.load(path2)
     name = basename(path1)
-    print(name)
     if name in excludes:
         print("Skip!", name)
         continue

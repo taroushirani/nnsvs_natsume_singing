@@ -54,8 +54,6 @@ Please visit https://amanokei.hatenablog.com/entry/2020/04/30/230003
 and read the term of services, and then download the singing voice database 
 manually.
 EOF
-
-EOF
     fi
 fi
 

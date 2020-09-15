@@ -150,13 +150,13 @@ def segment_labels(lab, strict=True, threshold=1.0, min_duration=5.0,
 
 def prep_ph2num():
     kiritan_phone_mapping = {}
-    with open(join(config["sinsy_dic"], "japanese.table")) as f:
+    with open(join(config["sinsy_dic"], "japanese.table"), encoding="UTF-8") as f:
         for l in f:
             s = l.strip().split()
             key = jaconv.hira2kata(s[0])
             kiritan_phone_mapping[key] = s[1:]
     sinsy_phone_mapping = {}
-    with open(join(config["sinsy_dic"], "japanese.utf_8.table")) as f:
+    with open(join(config["sinsy_dic"], "japanese.utf_8.table"), encoding="UTF-8") as f:
         for l in f:
             s = l.strip().split()
             key = jaconv.hira2kata(s[0])
