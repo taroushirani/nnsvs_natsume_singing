@@ -12,4 +12,4 @@ netG:
   num_layers: 2
   dropout: 0.5
   bidirectional: true
-  num_gaussians: 4
+  num_gaussians: 2

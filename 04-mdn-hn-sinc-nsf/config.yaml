@@ -58,4 +58,8 @@ pretrained_expdir:
 # batch size
 batch_size: 4
 
+### NSF related settings.
+sample_rate: 16000
+nsf_root_dir: downloads/project-NN-Pytorch-scripts/
+nsf_pretrained_model: nsf/trained_network_hn_sinc_nsf_cmu_arctic_corpus_20200728.pt
 
