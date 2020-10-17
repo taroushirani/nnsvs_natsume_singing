@@ -7,11 +7,10 @@ num_windows: 3
 stream_weights:
 
 netG:
-  _target_: nnsvs.model.RMDN
+  _target_: nnsvs.model.MDN
   in_dim: 424
   out_dim: 199
-  hidden_dim: 256
+  hidden_dim: 512
   num_layers: 2
   dropout: 0.1
-  bidirectional: true
-  num_gaussians: 2
+  num_gaussians: 4

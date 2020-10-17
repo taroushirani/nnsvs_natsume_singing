@@ -5,11 +5,10 @@ has_dynamic_features: [false]
 stream_weights: [1]
 
 netG:
-  _target_: nnsvs.model.RMDN
+  _target_: nnsvs.model.MDN
   in_dim: 420
   out_dim: 1
-  hidden_dim: 256
+  hidden_dim: 512
   num_layers: 2
-  bidirectional: true
   dropout: 0.5
-  num_gaussians: 2
+  num_gaussians: 4

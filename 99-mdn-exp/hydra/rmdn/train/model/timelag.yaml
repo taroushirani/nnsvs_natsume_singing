@@ -10,6 +10,6 @@ netG:
   out_dim: 1
   hidden_dim: 256
   num_layers: 2
-  bidirectional: true
   dropout: 0.5
-  num_gaussians: 2
+  bidirectional: true
+  num_gaussians: 4
