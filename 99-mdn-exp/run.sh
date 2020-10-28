@@ -215,7 +215,8 @@ fi
 
 if [ ${stage} -le 99 ] && [ ${stop_stage} -ge 99 ]; then
     for type in mdn rmdn; do
-	for num_gaussians in 1 2 4 8 16; do
+#	for num_gaussians in 1 2 4 8 16; do
+	for num_gaussians in 16 32; do
 	    xrun nnsvs-train --config-dir hydra/${type}/train --config-path config.yaml \
 		 data.train_no_dev.in_dir=$dump_norm_dir/$train_set/in_timelag/ \
 		 data.train_no_dev.out_dir=$dump_norm_dir/$train_set/out_timelag/ \
@@ -254,7 +255,7 @@ if [ ${stage} -le 99 ] && [ ${stop_stage} -ge 99 ]; then
 	    done
 	    
 	    cp -r exp ../../../../mdn/natsume/${type}_mix${num_gaussians}
-	    cp log_${type}_mix${num_gaussians} ../../../../mdn/natsume/
+	    cp ${type}_mix${num_gaussians}.log ../../../../mdn/natsume/
 	done
     done
 fi
