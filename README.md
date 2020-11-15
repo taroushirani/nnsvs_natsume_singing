@@ -3,6 +3,11 @@
 [NNSVS](https://github.com/r9y9/nnsvs) recipe of Yuuri Natsume's singing voice database (51 songs).
 Almost all codes are derived from [kiritan_singing](https://github.com/r9y9/kiritan_singing).
 
+## Important Notice
+**The recipe of Yuuri Natsume's singing voice database is merged into NNSVS repository since 04 Nov 2020.  Please use the official one.**
+
+This repository is maintained only for the experimental purpose.
+
 ## Requirements
 - nnsvs
 - pysinsy
