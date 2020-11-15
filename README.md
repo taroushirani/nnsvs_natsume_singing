@@ -21,14 +21,15 @@ This repository is maintained only for the experimental purpose.
 - pyyaml
 
 ## How to use
-Due to the licensing issue, this recipe does not include data nor helper scripts for downloading automatically. First of all, you need to get Natsume_Singing_DB.zip from [夏目悠李/男声歌声データベース配布、始めました！【2020/9/1更新】](https://amanokei.hatenablog.com/entry/2020/04/30/230003) (the terms of service are written in Japanese). Next, clone this repository and change `db_root` in `00-svs-world/config.yaml` according to your environment. Then move to `00-svs-world` directory and run:
+Due to the licensing issue, this recipe does not include data nor helper scripts for downloading automatically. First of all, you need to get Natsume_Singing_DB.zip from [夏目悠李/男声歌声データベース配布、始めました！【2020/10/10更新】](https://amanokei.hatenablog.com/entry/2020/04/30/230003) (the terms of service are written in Japanese). Next, clone this repository and change `db_root` in `00-svs-world/config.yaml` according to your environment. Then move to `00-svs-world` directory and run:
 
     run.sh --stage 0 --stop-stage 6
 
 The directory structure made by this recipe is the same as kiritan_singing does.
 
 ## Sample code
-- [Jupyter Notebook](https://gist.github.com/taroushirani/feb702386388188c7821f1a705a8f6b6) (Google Colaboratory, comments are written in Japanese)
+- [Jupyter Notebook(Using the official recipe)](https://gist.github.com/taroushirani/7c599cd482e9ecd5b8ee594914fe4f59) (Google Colaboratory, comments are written in Japanese)
+- [Jupyter Notebook(Older version)](https://gist.github.com/taroushirani/feb702386388188c7821f1a705a8f6b6) 
 
 ## Resources
-- 夏目悠李/男声歌声データベース配布、始めました！【2020/9/1更新】: https://amanokei.hatenablog.com/entry/2020/04/30/230003
+- 夏目悠李/男声歌声データベース配布、始めました！【2020/10/10更新】: https://amanokei.hatenablog.com/entry/2020/04/30/230003
