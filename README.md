@@ -28,7 +28,7 @@ Due to the licensing issue, this recipe does not include data nor helper scripts
 The directory structure made by this recipe is the same as kiritan_singing does.
 
 ## Sample code
-- [Jupyter Notebook(Using the official recipe)](https://gist.github.com/taroushirani/7c599cd482e9ecd5b8ee594914fe4f59) (Google Colaboratory, comments are written in Japanese)
+- [Jupyter Notebook(Using the official recipe)](https://gist.github.com/taroushirani/c8ba0e7804b976b562e75bb1053f7c6a) (Google Colaboratory, comments are written in Japanese)
 - [Jupyter Notebook(Older version)](https://gist.github.com/taroushirani/feb702386388188c7821f1a705a8f6b6) 
 
 ## Resources
